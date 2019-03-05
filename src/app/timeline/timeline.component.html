@@ -6,4 +6,11 @@
   <div class="content">
     {{ tweet.text }}
   </div>
+  <div class="content">
+    <i (click)="onLike(tweet)" class="fa-heart" [ngClass]="{'far':tweet.likers.length==0 , 'fas':tweet.likers.length>0}" ></i><span class="nbLike">{{" " + tweet.likers.length}}</span>
+  </div>
+</div>
+<div class="content textarea">
+	<textarea #newTweet>{{newTweet.value}}</textarea>
+	<button (click)="onSave(newTweet)" >Save</button>
 </div>
