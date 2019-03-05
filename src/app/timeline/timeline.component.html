@@ -1,16 +1,26 @@
-<div *ngFor="let tweet of tweets" class="container">
-  <div class="header">
+<div *ngFor="let tweet of tweets" class="tweet-container">
+  <div class="tweet-header">
     <strong>{{ tweet.user }}</strong>
-    <small class="time">{{ tweet.created_at | date:'short' }}</small>
+    <small class="time">{{ tweet.created_at | timeAgo }}</small>
   </div>
-  <div class="content">
+  <div class="tweet-content">
     {{ tweet.text }}
   </div>
-  <div class="content">
-    <i (click)="onLike(tweet)" class="fa-heart" [ngClass]="{'far':tweet.likers.length==0 , 'fas':tweet.likers.length>0}" ></i><span class="nbLike">{{" " + tweet.likers.length}}</span>
+  <div class="favorite">
+    <i class="button fa-heart" [ngClass]="{
+      'fas': tweet.isLiked,
+      'far': !tweet.isLiked
+    }"
+    (click)="likeTweet(tweet.id)"></i>
+    <span *ngIf="tweet.favoriteCount != null">{{ tweet.favoriteCount }}</span>
   </div>
 </div>
-<div class="content textarea">
-	<textarea #newTweet>{{newTweet.value}}</textarea>
-	<button (click)="onSave(newTweet)" >Save</button>
+
+<div class="create-tweet-container">
+  <div class="tweet-content">
+    <textarea cols="50" rows="5" #tweetContent></textarea>
+  </div>
+  <div class="footer">
+    <button class="send-tweet-button" (click)="addTweet(tweetContent.value)">Tweeter</button>
+  </div>
 </div>

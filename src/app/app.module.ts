@@ -8,9 +8,9 @@ import { TimelineComponent } from './timeline/timeline.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    TimeAgoPipe,
     TimelineComponent,
-    TimeAgoPipe
+    AppComponent,
   ],
   imports: [
     BrowserModule,

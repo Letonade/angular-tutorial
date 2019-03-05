@@ -1,10 +1,10 @@
-.container {
-  margin-top: 15px;
-  margin-left: 15px;
+.tweet-container {
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
-.header {
-  color: #246eb7;
+.tweet-header {
+  color: #14171a;
 
   .time {
     white-space: nowrap;
@@ -12,47 +12,56 @@
 }
 
 .time {
-  color: #a3d4e0;
+  color: #657786;
 }
 
 .time:before {
-  content: "\00ad";
-  margin: 7px;
+  content: "\00b7";
+  margin: 5px;
 }
 
-.content {
-  margin: 8px;
+.tweet-content {
+  margin: 0;
   p {
     white-space: pre-wrap;
   }
 }
 
-.textarea {
-	padding-top: 20px;
-	display: flex;
-	justify-content: center;
+.favorite {
+  margin-top: 5px;
+  color: #e0245e;
+  .button {
+    cursor: pointer;
+  }
+  span {
+    margin-left: 4px;
+  }
 }
 
-.textarea *{
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px #999;
-    border-radius: 5px;
+.create-tweet-container {
+  margin-top: 20px;
+  margin-left: 10px;
+
+  textarea {
+    background: #fff;
+    border: 1px solid #e6ecf0;
+    border-radius: 8px;
+    line-height: 20px;
+  }
+    
+  .send-tweet-button {
+    background-color: #32ADAD;
+    border-color: transparent;
+    border-radius: 100px;
+    color: white;
+    font-size: 10px;
+    line-height: 8px;
+    padding: 6px 16px;
+    margin-left: 310px;
+    cursor: pointer;
+  }
 }
 
-textarea{
-    padding: 10px;
-    font-size: .8rem;
-    letter-spacing: 1px;
-    line-height: 1.5;
-}
-
-.fa-heart{
-	color: red;
-}
-
-.fa-heart:hover{
-	cursor: pointer;
-}
-
-.nbLike{
+.favorite-count {
+  margin-left: 4px;
 }
